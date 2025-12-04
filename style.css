@@ -37,6 +37,7 @@ nav{
     width: 99%;
     position:sticky;
     opacity: 0.95;
+    z-index: 999;
 }
 nav > p{
     background-color: #004e5a;
@@ -48,11 +49,13 @@ nav > p{
     position:sticky;
     margin-top:0;
     border-top:none;
+    z-index: 999;
 }
 p > a{
     border-left: 2px solid #cc9610;
     border-collapse: collapse;
     padding: 1rem;
+    z-index: 999;
 }
 a:hover{
     color: #ffbf29;
@@ -61,4 +64,74 @@ p{
     font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue",
     Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
     "Segoe UI Symbol", "Noto Color Emoji";
+}
+:root{
+    --cols:4;
+    --gap:12px;
+}
+
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(var(--cols), 1fr);
+    gap:var(--gap);
+    padding:20px;
+    z-index: -1;
+}
+
+
+.item{
+    position:relative;
+    width:100%;
+    padding-top:70%; /* aspect ratio */
+    background:#ddd;
+    border-radius:8px;
+    overflow:hidden;
+    box-shadow:0 4px 12px rgba(0,0,0,0.15);
+    z-index: -1;
+}
+
+
+.item img{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    z-index: -1;
+}
+
+
+.caption{
+    position:absolute;
+    bottom:0;
+    left:0;
+    right:0;
+    padding:10px;
+    font-size:1rem;
+    color:white;
+    background:rgba(0,0,0,0.45);
+    z-index: -1;
+}
+
+
+/* full-width image */
+.full{
+    grid-column:1 / -1;
+    padding-top:30%; /* wider ratio */
+    z-index: -1;
+}
+
+
+/* Responsive */
+@media(max-width:900px){
+    :root{--cols:3;}
+    z-index: -1;
+}
+@media(max-width:600px){
+    :root{--cols:2;}
+    z-index: -1;
+}
+@media(max-width:420px){
+    :root{--cols:1;}
+    z-index: -1;
 }
