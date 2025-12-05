@@ -30,11 +30,12 @@ h1{
     padding-top:0;
     margin-top:0;
     border-top:none;
+    width: 100%;
 }
 nav{
     padding-top: 0;
     background-color: #004e5a;
-    width: 99%;
+    width: 98.6%;
     position:sticky;
     opacity: 0.95;
     z-index: 999;
@@ -50,6 +51,8 @@ nav > p{
     margin-top:0;
     border-top:none;
     z-index: 999;
+
+
 }
 p > a{
     border-left: 2px solid #cc9610;
@@ -76,6 +79,7 @@ p{
     gap:var(--gap);
     padding:20px;
     z-index: -1;
+    width: 98.68%;
 }
 
 .item {
@@ -85,7 +89,7 @@ p{
 
 .item{
     position:relative;
-    width:100%;
+    width: 98.6%;
     padding-top:70%; /* aspect ratio */
     background:#ddd;
     border-radius:8px;
