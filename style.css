@@ -36,19 +36,11 @@ h1{
     top: 0;
     opacity: 0.5;
 }
-.sticky{
-    top: 0;
-    position: sticky;
-    padding-top:0;
-    margin-top:0;
-    border-top:none;
-    width: 100%;
-}
 nav{
     top:0;
     padding-top: 0;
     background-color: #004e5a;
-    width: 99.1%;
+    width:100%;
     position:sticky;
     opacity: 0.95;
     z-index: 999;
@@ -59,7 +51,7 @@ nav > p{
     font-size: 1.5rem;
     padding: 1rem;
     color: #cc9610;
-    width:98.6%;
+    width:98%;
     position:sticky;
     margin-top:0;
     border-top:none;
@@ -88,7 +80,7 @@ p{
     display:grid;
     grid-template-columns:repeat(var(--cols), 1fr);
     gap:var(--gap);
-    padding:15px;
+    padding-left:14px;
     z-index: -1;
     width: 98.68%;
 }
@@ -137,7 +129,7 @@ p{
 .full{
     grid-column:1 / -1;
     padding-top:55%; /* wider ratio */
-    z-index: -1;
+    z-index: 100;
 }
 
 
@@ -154,14 +146,6 @@ p{
     :root{--cols:1;}
     z-index: -1;
 }
-
-.width-extra{
-    width:99.1%;
-    margin: 0;
-    min-height: 100vh;
-
-}
-
 .runeterra {
     position: relative;
     z-index: 0;
@@ -175,14 +159,6 @@ p{
     background-size: cover;
     background-attachment: fixed;
     opacity: 0.4;   /* adjust transparency here */
-    z-index: -1;
-}
-
-.Ahri{
-    background-image: url("fotos/ahri.jpg");
-    background-size: cover;
-    background-attachment: fixed;
-    opacity: 0.4;
     z-index: -1;
 }
 .Aatrox{
@@ -199,31 +175,394 @@ p{
     opacity: 0.7;
     z-index: -1;
 }
-.Akali{
-    background-image: url("fotos/akali.jpg");
+.Ahri{
+    position:relative;
+    z-index: 0;
+}
+.Ahri::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("fotos/ahri.jpg");
     background-size: cover;
     background-attachment: fixed;
-    opacity: 0.4;
+    opacity: 0.7;
     z-index: -1;
 }
-.Akshan{
-    background-image: url("fotos/akshan.jpg");
-    background-size: cover;
-    background-attachment: fixed;
-    opacity: 0.4;
-    z-index: -1;
+.gromp{
+    float: right;
+    height: 5rem;
+    width: 5rem;
 }
-.Alistar{
-    background-image: url("fotos/alistar.jpg");
-    background-size: cover;
-    background-attachment: fixed;
-    opacity: 0.4;
-    z-index: -1;
+.krug{
+    float: left;
+    height: 5rem;
+    width: 5rem;
 }
-.Ambessa{
-    background-image: url("fotos/ambessa.jpg");
-    background-size: cover;
-    background-attachment: fixed;
-    opacity: 0.4;
-    z-index: -1;
+.champs-head {
+    font-size: 3rem;
+    margin-bottom: 0;
+}
+.champs{
+    background-color: #061f36;
+    color: #ebce99;
+}
+/* HERO */
+.hero {
+    position: relative;
+    height: 100vh;
+    background: url("images/hero.jpg") center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(5, 10, 20, 0.7);
+}
+
+.hero-content {
+    position: relative;
+    text-align: center;
+    max-width: 700px;
+    padding: 20px;
+}
+
+.hero h1 {
+    font-family: 'Cinzel', serif;
+    font-size: 4rem;
+    color: #c8aa6e;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+/* BUTTONS */
+.btn {
+    padding: 14px 28px;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.primary {
+    background: #c8aa6e;
+    color: #0b0e13;
+}
+
+.primary:hover {
+    background: #e6c97a;
+}
+
+.secondary {
+    border: 1px solid #c8aa6e;
+    color: #c8aa6e;
+}
+
+.secondary:hover {
+    background: #c8aa6e;
+    color: #0b0e13;
+}
+
+/* FEATURES */
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    padding: 80px 10%;
+}
+
+.feature-card {
+    background: #111622;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-8px);
+}
+
+.feature-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.feature-text {
+    padding: 20px;
+}
+
+.feature-text h2 {
+    font-family: 'Cinzel', serif;
+    color: #c8aa6e;
+    margin-bottom: 10px;
+}
+.feature-text p {
+    font-family: 'Cinzel', serif;
+    color: #c8aa6e;
+    margin-bottom: 10px;
+}
+
+.link {
+    color: #c8aa6e;
+    text-decoration: none;
+}
+
+/* CHAMPIONS */
+.champions {
+    padding: 80px 10%;
+    text-align: center;
+}
+
+.champions h2 {
+    font-family: 'Cinzel', serif;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: #c8aa6e;
+}
+
+
+.champion-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 20px;
+}
+
+.champion-card {
+    background: #111622;
+    padding: 40px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.champion-card:hover {
+    color: #c8aa6e;
+    box-shadow: 0 0 15px rgba(200, 170, 110, 0.4);
+}
+
+/* FOOTER */
+.footer {
+    padding: 30px;
+    text-align: center;
+    background: #070a10;
+    font-size: 0.9rem;
+}
+.footer > p{
+    color: white;
+}
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 70px;
+    background: rgba(7, 10, 16, 0.75);
+    backdrop-filter: blur(6px);
+    z-index: 1000;
+    border-bottom: 1px solid rgba(200, 170, 110, 0.2);
+}
+
+.nav-container {
+    max-width: 1400px;
+    height: 100%;
+    margin: auto;
+    padding: 0 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* LOGO */
+.nav-logo a {
+    font-family: 'Cinzel', serif;
+    font-size: 1.6rem;
+    color: #c8aa6e;
+    text-decoration: none;
+    letter-spacing: 2px;
+}
+
+/* LINKS */
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    font-size: 0.95rem;
+    color: #e6e6e6;
+    transition: color 0.3s ease;
+}
+
+/* Gold underline hover */
+.nav-links a::after {
+    content: "";
+    left: 0;
+    bottom: -6px;
+    width: 0;
+    height: 2px;
+    background: #c8aa6e;
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #c8aa6e;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+/* PLAY NOW BUTTON */
+.nav-play {
+    padding: 10px 18px;
+    border: 1px solid #c8aa6e;
+    border-radius: 4px;
+    color: #c8aa6e !important;
+    font-weight: 600;
+}
+
+.nav-play:hover {
+    background: #c8aa6e;
+    color: #0b0e13 !important;
+}
+.faker-hero {
+    position: relative;
+    height: 90vh;
+    background: url("images/faker-hero.jpg") center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.faker-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+            rgba(10, 10, 15, 0.85),
+            rgba(10, 10, 15, 0.95)
+    );
+    height: 111.1%;
+}
+
+.faker-hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.faker-hero h1 {
+    font-family: 'Cinzel', serif;
+    font-size: 5rem;
+    color: #c8aa6e;
+    letter-spacing: 6px;
+}
+
+.faker-hero h2 {
+    font-size: 1.6rem;
+    margin: 15px 0;
+}
+
+.faker-hero p {
+    opacity: 0.85;
+}
+
+/* PROFILE SECTION */
+.faker-profile {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 40px;
+    padding: 140px 10%;
+}
+
+.profile-card {
+    background: #111622;
+    padding: 30px;
+    border-radius: 8px;
+    border: 1px solid rgba(200, 170, 110, 0.2);
+}
+
+.profile-card h3 {
+    font-family: 'Cinzel', serif;
+    color: #c8aa6e;
+    margin-bottom: 20px;
+}
+
+.profile-card ul {
+    list-style: none;
+}
+
+.profile-card li {
+    margin-bottom: 12px;
+    font-size: 0.95rem;
+}
+
+/* SIGNATURE CHAMPIONS */
+.faker-champions {
+    padding: 80px 10%;
+    text-align: center;
+}
+
+.faker-champions h2 {
+    font-family: 'Cinzel', serif;
+    font-size: 2.5rem;
+    color: #c8aa6e;
+    margin-bottom: 40px;
+}
+
+.signature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 25px;
+}
+
+.signature-card {
+    background: #111622;
+    padding: 50px 20px;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.signature-card:hover {
+    color: #c8aa6e;
+    box-shadow: 0 0 20px rgba(200, 170, 110, 0.4);
+}
+
+/* LEGACY */
+.faker-legacy {
+    padding: 80px 15%;
+    text-align: center;
+    background: radial-gradient(circle at center, #111622, #0b0e13);
+}
+
+.faker-legacy h2 {
+    font-family: 'Cinzel', serif;
+    color: #c8aa6e;
+    font-size: 2.3rem;
+    margin-bottom: 30px;
+}
+
+.faker-legacy p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    opacity: 0.9;
+}
+.pp{
+    color: #c8aa6e;
 }
